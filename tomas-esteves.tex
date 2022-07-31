@@ -1,218 +1,288 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[legalpaper, portrait, margin=2cm]{geometry}
-\usepackage{fancyhdr}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{blindtext}
-\usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage{pdflscape}
-\usepackage{svg}
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.6.4, 13 Nov 2021) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
 
-\graphicspath{ {./} }
-\hypersetup{
-  colorlinks=true,
-  linkcolor=blue,
-  filecolor=magenta,
-  urlcolor=blue,
-  citecolor=blue,
-  pdftitle={Relatório BD - Entrega 2 - 2021/2022},
-  pdfpagemode=FullScreen,
-}
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Grupo \textbf{8}}
-\lhead{Relatório Entrega 2 BD 2021/2022 LEIC-A}
-\cfoot{Diogo Gaspar (99207), Diogo Correia (99211) e Tomás Esteves (99341)}
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
-\renewcommand{\footrulewidth}{0.2pt}
+%% AltaCV uses the fontawesome5 package.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
-\renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\labelitemiii}{$\diamond$}
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
-\newlist{constraintsList}{itemize}{4}
-\setlist[constraintsList]{itemsep=1pt, topsep=1pt, label=\protect\mpbullet}
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
 
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
 
 \begin{document}
-  \begin{titlepage}
-    \begin{center}
-      \vspace*{5cm}
-    
-      \Huge
-      \textbf{Projeto BD - Parte 2}
+\name{Tomás Esteves}
+\tagline{Studying Computer Science at IST}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+% \photoL{2cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{tomasesteves2002@gmail.com}
+%   \phone{000-00-0000}
+  
+  \location{Lisbon, PT}
+  
+   \github{Pesteves2002} % I'm just making this up though.
+   
+   \NewInfoField*{Strava}{\faRoad}{\strava}
+   \Strava{Tomás Esteves}{https://www.strava.com/athletes/26750651}
+   
+%   \orcid{0000-0000-0000-0000} % Obviously making this up too.
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}{https://www.strava.com/athletes/26750651}
+	%%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
 
-      \vspace{0.5cm}
-      \LARGE
-      Grupo 008 | Turno L20 | LEIC-A
+\makecvheader
 
-      \vspace{0.5cm}
-      \large
-      Prof. João Aparício | Prof. Leonardo Alexandre
+\NewInfoField*{Gitrepo}{\faGithub}{\gitrepo}
 
-      \vfill
-    \end{center}
-    \large
-    \begin{itemize}
-      \item[] \textbf{Diogo Gaspar} (99207) - 34\% - Xh
-      \item[] \textbf{Diogo Correia} (99211) - 33\% - Xh
-      \item[] \textbf{Tomás Esteves} (99341) - 33\% - Xh
-    \end{itemize}
-  \end{titlepage}
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
 
-  \section*{Modelo Relacional}
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
 
-  \ttfamily
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
 
-  \noindent
-  point\_of\_retail(\underline{address}, name)
-  
-  \vspace*{10pt}
+\cvsection{Experience}
 
-  \noindent
-  ivm(\underline{serial\_number, manuf})
+Student at Instituto Superior Técnico
 
-  \vspace*{10pt}
+\begin{itemize}
+\item Finished Year 2 of the computer science
+\item Mentor of freshman students
+\end{itemize}
 
-  \noindent
-  installed\_at(\underline{address, serial\_number, manuf}, nr)
-  \begin{itemize}[nosep]
-    \item address: FK(point\_of\_retail)
-    \item serial\_number, manuf: FK(ivm.serial\_number, ivm.manuf)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  retailer(\underline{tin}, name)
-  \begin{itemize}[nosep]
-    \item UNIQUE(name)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  category(\underline{name})
-  \begin{itemize}[nosep]
-    \item \textsf{\textbf{(IC-1)}} name \textsf{must exist in} simple\_category \textsf{or} super\_category
-    \item \textsf{\textbf{(IC-2)}} name \textsf{never exists in both} simple\_category \textsf{and} super\_category \textsf{simultaneously}
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  simple\_category(\underline{name})
-  \begin{itemize}[nosep]
-    \item name: FK(category)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  super\_category(\underline{name})
-  \begin{itemize}[nosep]
-    \item name: FK(category)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  has\_other(\underline{category\_name}, super\_category\_name)
-  \begin{itemize}[nosep]
-    \item category\_name: FK(category.name)
-    \item super\_category\_name: FK(super\_category.name)
-    \item \textsf{\textbf{(IC-1)}} category\_name \textsf{can't be the same as the} super\_category\_name
-    \item \textsf{\textbf{(IC-2)} There can't be cycles in the categories' hierarchies}
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  product(\underline{ean}, descr)
-  \begin{itemize}
-    \item \textsf{\textbf{(IC-1)} Every} product \textsf{must participate in the} has \textsf{association}
-  \end{itemize}
+\divider
 
-  \vspace*{10pt}
-  
-  \noindent
-  has(\underline{ean, category\_name})
-  \begin{itemize}[nosep]
-    \item ean: FK(product)
-    \item category\_name: FK(category.name)
-  \end{itemize}
-  
-  % SHELVES
-  
-  \vspace*{10pt}
-  
-  \noindent
-  shelf(\underline{serial\_number, manuf, nr}, height, category\_name)
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf: FK(ivm.serial\_number, ivm.manuf)
-    \item category\_name: FK(category.name)
-    \item \textsf{\textbf{(IC-1)}} serial\_number, manuf, nr \textsf{must exist in one of} warm\_shelf \textsf{or}\\ ambient\_temperature\_shelf \textsf{or} cold\_shelf
-    \item \textsf{\textbf{(IC-2)}} serial\_number, manuf, nr \textsf{never exists in more than one of} warm\_shelf \textsf{and}\\ ambient\_temperature\_shelf \textsf{or} cold\_shelf \textsf{simultaneously}
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  warm\_shelf(\underline{serial\_number, manuf, nr})
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf, nr: FK(shelf.serial\_number, shelf.manuf, shelf.nr)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  ambient\_temperature\_shelf(\underline{serial\_number, manuf, nr})
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf, nr: FK(shelf.serial\_number, shelf.manuf, shelf.nr)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  cold\_shelf(\underline{serial\_number, manuf, nr})
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf, nr: FK(shelf.serial\_number, shelf.manuf, shelf.nr)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  planogram(\underline{serial\_number, manuf, nr, ean}, faces, units, loc)
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf, nr: FK(shelf.serial\_number, shelf.manuf, shelf.nr)
-    \item ean: FK(product)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  replenishment\_event(\underline{serial\_number, manuf, nr, ean, instant}, units, tin)
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf, nr, ean: FK(planogram.serial\_number, planogram.manuf,\\ planogram.nr, planogram.ean)
-    \item tin: FK(retailer)
-  \end{itemize}
-  
-  \vspace*{10pt}
-  
-  \noindent
-  responsible\_for(\underline{serial\_number, manuf, tin, category\_name})
-  \begin{itemize}[nosep]
-    \item serial\_number, manuf: FK(ivm.serial\_number, ivm.manuf)
-    \item tin: FK(retailer)
-    \item category\_name: FK(category.name)
-  \end{itemize}
+Learner at the Odin Project
 
-  \sffamily
-  \section*{Álgebra Relacional}
-  
-  // TODO
+\begin{itemize}
+\item Finished the "Foundations" module 
+\item Doing the "Full Stack Javascript" module
+\end{itemize}
+
+ \Gitrepo{Odin Project Repository}{https://github.com/Pesteves2002/Odin-Project}
+
+\divider
+
+Maintainer at Resumos LEIC
+
+\Gitrepo{Resumos LEIC repository}{https://github.com/Pesteves2002/resumos-leic}
+
+\divider
+
+Participant at Advent of Code (AoC)
+
+\Gitrepo{Aoc Repository}{https://github.com/Pesteves2002/AOC-2021}
+
+\divider
+
+Federate Runner at NucleOeiras (ADNO)
+
+\begin{itemize}
+
+\item First Place at National Mountain Running (Team)
+\item Second Place at National Mountain Running (Individual)
+\item Second Place at National Road Running (Team)
+\item Third Place at National Cross-Country Running (Team)
+\item Top 10 at Marginal à Noite 2022
+
+\end{itemize}
+\divider
+
+Finished Secondary School
+\begin{itemize}
+
+\item Finished with an average of 18.5
+\item Participant at Regional "Olímpiadas da Física"
+\item Participant at Regional "Olímpiadas da Matemática"
+\item Participant at National "Corta-Mato Escolar"
+
+\end{itemize}
+
+% \divider
+
+% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+% \begin{itemize}
+% \item Joined the company as employe \#20 and female employee \#1
+% \item Developed targeted advertisement in order to use user's search queries and show them related ads
+% \end{itemize}
+
+\cvsection{A Day of My Life}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+\hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+\wheelchart{1.0cm}{0.5cm}{%
+  30/13em/accent!30/Sleeping,
+  20/9em/accent!60/Running,
+  10/11em/accent!40/Spending time with family and friends,
+  25/8em/accent!20/\footnotesiz Studying,
+  15/9em/accent/Working on my own projects}
+
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faWrench}{Built my own PC}{Learned hardware and installed both Windows and Linux in Dual Boot}
+
+\divider
+
+\cvachievement{\faTrophy}{My 10km PR}{My time for 10km is 35:36 and I want to go sub 35 and even sub 34 still in 2022}
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Strengths}
+
+\cvtag{Hard-working}
+\cvtag{Persuasive}\\
+\cvtag{Motivated}
+
+\cvsection{Languages}
+
+\cvskill{Portuguese}{5}
+% \divider
+\cvskill{English}{4}
+% \divider
+
+\cvskill{French}{1}
+% \divider
+
+\cvsection{Programming Languages}
+
+\cvskill{Python}{4}
+% \divider
+\cvskill{C++}{3}
+% \divider
+\cvskill{C}{3}
+% \divider
+\cvskill{PostgreSQL}{3}
+% \divider
+\cvskill{HTML}{3}
+% \divider
+\cvskill{CSS}{3}
+% \divider
+\cvskill{Javascript}{3}
+% \divider
+\cvskill{Java}{2}
+
+
+\cvsection{Tools}
+
+\cvskill{Git}{5}
+% \divider
+\cvskill{Latex}{4}
+% \divider
+\cvskill{CVS}{2}
+% \divider
+
+\cvsection{Operating Systems}
+
+\cvskill{Linux}{4}
+% \divider
+\cvskill{Windows}{3}
+% \divider
+\cvskill{MacOS}{1}
+% \divider
+
+\cvsection{Education}
+
+\cvevent{M.S.\ in Computer Science}{Instituto Superior Técnico}{Sept 2020 -- June 2022}{}
+
+\divider
+
+\cvevent{Finished Secondary School}{Escola Secundária do Restelo}{June 2020}{}
+
+
+\end{paracol}
+
 \end{document}
-
