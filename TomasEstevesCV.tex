@@ -38,8 +38,8 @@
 \fi
 
 % Change the colours if you want to
-\definecolor{VividPurple}{HTML}{3E0097}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{VividPurple}{HTML}{73A9C2}
+\definecolor{SlateGrey}{HTML}{004953}
 \definecolor{LightGrey}{HTML}{666666}
 % \colorlet{name}{black}
 % \colorlet{tagline}{PastelRed}
@@ -75,7 +75,7 @@
 
 \begin{document}
 \name{Tomás Esteves}
-\tagline{Studying Computer Science at IST}
+\tagline{Studying Computer Science and Engineering at IST}
 % Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
 %% You can add multiple photos on the left or right
 % \photoL{2cm}{Yacht_High,Suitcase_High}
@@ -89,7 +89,7 @@
   
    \github{Pesteves2002} % I'm just making this up though.
    
-   \NewInfoField*{Strava}{\faRoad}{\strava}
+   \NewInfoField*{Strava}{\faStrava}{\strava}
    \Strava{Tomás Esteves}{https://www.strava.com/athletes/26750651}
    
 %   \orcid{0000-0000-0000-0000} % Obviously making this up too.
@@ -129,20 +129,11 @@
 
 \cvsection{Experience}
 
-Student at Instituto Superior Técnico
-
-\begin{itemize}
-\item Finished Year 2 of the computer science
-\item Mentor of freshman students
-\end{itemize}
-
-\divider
-
 Learner at the Odin Project
 
 \begin{itemize}
 \item Finished the "Foundations" module 
-\item Doing the "Full Stack Javascript" module
+\item Working on the "Full Stack Javascript" module
 \end{itemize}
 
  \Gitrepo{Odin Project Repository}{https://github.com/Pesteves2002/Odin-Project}
@@ -151,38 +142,52 @@ Learner at the Odin Project
 
 Maintainer at Resumos LEIC
 
-\Gitrepo{Resumos LEIC repository}{https://github.com/Pesteves2002/resumos-leic}
+\Gitrepo{Resumos LEIC Repository}{https://github.com/Pesteves2002/resumos-leic}
 
 \divider
 
 Participant at Advent of Code (AoC)
 
-\Gitrepo{Aoc Repository}{https://github.com/Pesteves2002/AOC-2021}
+\Gitrepo{AoC Repository}{https://github.com/Pesteves2002/AOC-2021}
+
+\cvsection{Education}
+
+\cvevent{Computer Science and Engineering}{Instituto Superior Técnico}{Sept 2020 -- June 2023 (Expected)}{}
+
+\begin{itemize}
+\item Finished Year 2 of Computer Science and Engineering
+\item Mentor of freshman students
+\end{itemize}
 
 \divider
 
-Federate Runner at NucleOeiras (ADNO)
+\cvevent{Finished Secondary School}{Escola Secundária do Restelo}{June 2020}{}
+\begin{itemize}
+
+\item Finished with an average of 19 out of 20
+\item Participant at Regional "Olímpiadas da Física"
+\item Participant at Regional "Olímpiadas da Matemática"
+\item Participant at National "Corta-Mato Escolar"
+
+\end{itemize}
+
+\cvsection{Running Career}
+
+Federated Runner at NucleOeiras (ADNO)
 
 \begin{itemize}
 
 \item First Place at National Mountain Running (Team)
 \item Second Place at National Mountain Running (Individual)
 \item Second Place at National Road Running (Team)
-\item Third Place at National Cross-Country Running (Team)
-\item Top 10 at Marginal à Noite 2022
+\item Third Place at National Cross Country Running (Team)
+\item Top 10 at Marginal à Noite 2022 
 
 \end{itemize}
-\divider
 
-Finished Secondary School
-\begin{itemize}
 
-\item Finished with an average of 18.5
-\item Participant at Regional "Olímpiadas da Física"
-\item Participant at Regional "Olímpiadas da Matemática"
-\item Participant at National "Corta-Mato Escolar"
 
-\end{itemize}
+
 
 % \divider
 
@@ -193,20 +198,6 @@ Finished Secondary School
 % \item Developed targeted advertisement in order to use user's search queries and show them related ads
 % \end{itemize}
 
-\cvsection{A Day of My Life}
-
-% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% \wheelchart{outer radius}{inner radius}{
-% comma-separated list of value/text width/color/detail}
-% Some ad-hoc tweaking to adjust the labels so that they don't overlap
-\hspace*{-1em}  %% quick hack to move the wheelchart a bit left
-\wheelchart{1.0cm}{0.5cm}{%
-  30/13em/accent!30/Sleeping,
-  20/9em/accent!60/Running,
-  10/11em/accent!40/Spending time with family and friends,
-  25/8em/accent!20/\footnotesiz Studying,
-  15/9em/accent/Working on my own projects}
-
 
 \cvsection{Most Proud of}
 
@@ -214,7 +205,8 @@ Finished Secondary School
 
 \divider
 
-\cvachievement{\faTrophy}{My 10km PR}{My time for 10km is 35:36 and I want to go sub 35 and even sub 34 still in 2022}
+\cvachievement{\faTrophy}{My 10km PR}{My time for 10km is 35:36 and I want to go sub 35 and even sub 34 by the end of 2022}
+
 
 
 %% Switch to the right column. This will now automatically move to the second
@@ -229,12 +221,15 @@ Finished Secondary School
 
 \cvsection{Languages}
 
-\cvskill{Portuguese}{5}
-% \divider
-\cvskill{English}{4}
-% \divider
-
-\cvskill{French}{1}
+	\vspace{1.2mm}
+	\small \textbf{Portuguese} \hfill {Native \hspace{3pt}} \\
+	
+	\vspace{1mm}
+	\small \textbf{English} \hfill{B1\hspace{3pt}}
+	\vspace{1.2mm}
+	
+	
+	
 % \divider
 
 \cvsection{Programming Languages}
@@ -258,29 +253,36 @@ Finished Secondary School
 
 \cvsection{Tools}
 
-\cvskill{Git}{5}
-% \divider
-\cvskill{Latex}{4}
-% \divider
-\cvskill{CVS}{2}
-% \divider
+\vspace{1.2mm}
+
+Experience with version control systems, such as Git (GitHub) and CVS.\\
+Experience with LaTeX.\\
+Experience with Visual Studio Code and familiar with vim.
+
+\vspace{1.2mm}
 
 \cvsection{Operating Systems}
 
-\cvskill{Linux}{4}
-% \divider
-\cvskill{Windows}{3}
-% \divider
-\cvskill{MacOS}{1}
-% \divider
+\vspace{1.2mm}
+Using Linux as my daily driver.\\
+Also comfortable using Windows.
+\vspace{1.2mm}
 
-\cvsection{Education}
+\cvsection{A Day In My Life}
 
-\cvevent{M.S.\ in Computer Science}{Instituto Superior Técnico}{Sept 2020 -- June 2022}{}
+\vspace{1.2mm}
 
-\divider
-
-\cvevent{Finished Secondary School}{Escola Secundária do Restelo}{June 2020}{}
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+\hspace*{-10em}  %% quick hack to move the wheelchart a bit left
+\wheelchart{1.0cm}{0.5cm}{%
+  30/13em/accent!30/Sleeping,
+  20/9em/accent!60/Running,
+  10/11em/accent!40/Spending time with family and friends,
+  25/8em/accent!20/\footnotesiz Studying,
+  15/9em/accent/Working on my own projects}
 
 
 \end{paracol}
