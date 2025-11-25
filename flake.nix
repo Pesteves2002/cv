@@ -1,5 +1,5 @@
 {
-  description = "My Curriculum Vitae flake";
+  description = "My Curriculum Vitate flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -11,7 +11,8 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    # Example of downloading icons from a non-flake source font-awesome = {
+    # Example of downloading icons from a non-flake source
+    # font-awesome = {
     #   url = "github:FortAwesome/Font-Awesome";
     #   flake = false;
     # };
@@ -33,13 +34,11 @@
       commonArgs = {
         typstSource = "main.typ";
 
-        fontPaths = with pkgs; [
+        fontPaths = [
           # Add paths to fonts here
           # "${pkgs.roboto}/share/fonts/truetype"
-          source-sans
-          source-sans-pro
-          roboto
-          font-awesome_6
+          pkgs.roboto
+          pkgs.source-sans-pro
         ];
 
         virtualPaths = [
@@ -51,18 +50,37 @@
         ];
       };
 
+      unstable_typstPackages = [
+        {
+          name = "modern-cv";
+          version = "0.7.0";
+          hash = "sha256-xabbUs8W22rZzUyV96eamoBuFhmXrNEwPUoO8XQTqk8=";
+        }
+        {
+          name = "fontawesome";
+          version = "0.5.0";
+          hash = "sha256-1fAXxJJq5CtUu3+IYaL0m3swM5DBU71lFDdhzQdqf84=";
+        }
+
+        {
+          name = "linguify";
+          version = "0.4.1";
+          hash = "sha256-w1segvxUIY2sdK1YXeVaQl1MBbFmruMCyIgRWm8g+cU=";
+        }
+      ];
+
       # Compile a Typst project, *without* copying the result
       # to the current directory
       build-drv = typixLib.buildTypstProject (commonArgs
         // {
-          inherit src;
+          inherit src unstable_typstPackages;
         });
 
       # Compile a Typst project, and then copy the result
       # to the current directory
       build-script = typixLib.buildTypstProjectLocal (commonArgs
         // {
-          inherit src;
+          inherit src unstable_typstPackages;
         });
 
       # Watch a project and recompile on changes
