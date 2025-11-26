@@ -123,9 +123,9 @@
 )
 
 #resume-item[
-  Designed and implemented a 3D version of Conway’s Game of Life in serial, parallel, and distributed environments, achieving linear scalability across cores and nodes.
+  - Implemented a 3D Conway’s Game of Life in parallel and distributed environments, achieving linear scalability.
 
-  Leveraged OpenMP, OpenMPI, and SLURM to optimize performance, automate distributed execution, and validate scaling efficiency on multi-machine clusters.
+  - Optimized performance and automated execution with OpenMP, OpenMPI, and SLURM on multi-machine clusters.
 ]
 
 #resume-entry(
@@ -137,9 +137,8 @@
 )
 
 #resume-item[
-  Built and enhanced features for QuizzesTutor, a full-stack web application developed within an Agile workflow using sprint cycles and Test-Driven Development (TDD).
-
-  Worked across the stack using Spring Boot, JMeter, Postgres, Vue, Cypress and, GitLab to implement new functionality, ensure code quality, automate testing, and support continuous integration.
+  - Developed features for QuizzesTutor, a full-stack web app, in an Agile workflow with sprints and Test-Driven Development (TDD).
+  - Worked across the stack with Spring Boot, PostgreSQL, Vue, and GitLab, supporting CI/CD pipelines.
 ]
 
 = Projects and Interests
