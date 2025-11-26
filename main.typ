@@ -1,4 +1,4 @@
-#import "@preview/modern-cv:0.7.0": *
+#import "@preview/modern-cv:0.9.0": *
 
 #show: resume.with(
   author: (
@@ -8,14 +8,15 @@
     // homepage: "https://example.com",
     phone: "",
     github: "Pesteves2002",
+    linkedin: "tomase-pt",
     // twitter: "typstapp",
     // scholar: "",
     // orcid: "0000-0000-0000-000X",
     // birth: "January 1, 1990",
-    // linkedin: "Example",
     // address: "111 Example St. Example City, EX 11111",
     positions: ("Master's Student",),
   ),
+  profile-picture: none,
   date: datetime.today().display(),
   language: "en",
   colored-headers: true,
@@ -70,9 +71,24 @@
 
 = Skills
 
-#resume-skill-item("Languages", (strong("C"), strong("Java"), "SQL", "Spring Boot",))
+#resume-skill-item(
+  "Languages",
+  (
+    strong("C"),
+    strong("Java"),
+    "SQL",
+    "Spring Boot",
+  ),
+)
 #resume-skill-item("Spoken Languages", (strong("Portuguese"), "English"))
-#resume-skill-item("Operating Systems", (strong("NixOS"), "Windows", "Arch Linux"))
+#resume-skill-item(
+  "Operating Systems",
+  (
+    strong("NixOS"),
+    "Windows",
+    "Arch Linux",
+  ),
+)
 #resume-skill-item("Tools", (strong("git"), "vim", "Latex", "Typst"))
 
 = Education
@@ -107,10 +123,10 @@
 #resume-entry(
   title: "Federate Athlete",
   date: "September 2018 - Current",
-  description: "Runner with participation in National level competitions"
+  description: "Runner with participation in National level competitions",
 )
 
 #resume-entry(
   title: "Computer Hardware",
-  description: "Interested in the current hardware scene"
+  description: "Interested in the current hardware scene",
 )

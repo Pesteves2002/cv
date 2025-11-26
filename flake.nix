@@ -2,7 +2,7 @@
   description = "My Curriculum Vitate flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     typix = {
       url = "github:loqusion/typix";
@@ -34,11 +34,14 @@
       commonArgs = {
         typstSource = "main.typ";
 
-        fontPaths = [
+        fontPaths = with pkgs; [
           # Add paths to fonts here
           # "${pkgs.roboto}/share/fonts/truetype"
-          pkgs.roboto
-          pkgs.source-sans-pro
+          roboto
+          source-sans-pro
+          source-sans
+          font-awesome
+          typstPackages.fontawesome
         ];
 
         virtualPaths = [
@@ -53,19 +56,19 @@
       unstable_typstPackages = [
         {
           name = "modern-cv";
-          version = "0.7.0";
-          hash = "sha256-xabbUs8W22rZzUyV96eamoBuFhmXrNEwPUoO8XQTqk8=";
+          version = "0.9.0";
+          hash = "sha256-zCv2UABp3lBBbYthrSXD4OXWaiIjMdwRPQbq5a8AlUk=";
         }
         {
           name = "fontawesome";
-          version = "0.5.0";
-          hash = "sha256-1fAXxJJq5CtUu3+IYaL0m3swM5DBU71lFDdhzQdqf84=";
+          version = "0.6.0";
+          hash = "sha256-dgb+YAYLEKgMMEWa8yelMvRdEoesPj5HI+70w3mCUcQ=";
         }
 
         {
           name = "linguify";
-          version = "0.4.1";
-          hash = "sha256-w1segvxUIY2sdK1YXeVaQl1MBbFmruMCyIgRWm8g+cU=";
+          version = "0.4.2";
+          hash = "sha256-kuoK0r29kvc0rvDIQWELp/fZUm3Bzxc5W8M/YMU3lvg=";
         }
       ];
 
