@@ -100,6 +100,7 @@
           hooks = {
             alejandra.enable = true;
             typstyle.enable = true;
+            yamllint.enable = true;
           };
         };
       };

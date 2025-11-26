@@ -1,6 +1,7 @@
+---
 name: Build and Release
 
-on:
+"on":
   push:
 
 jobs:
@@ -29,10 +30,10 @@ jobs:
           git tag compiled-pdf
           git push origin compiled-pdf
           gh release delete ${{ env.VERSION }} -y || true
-          gh release create ${{ env.VERSION }} -t "Compiled CV" -n "Compiled CV (commit ${{ github.sha }})" ${{ env.FILES }}
+          gh release create ${{ env.VERSION }} -t "Compiled CV" \
+          -n "Compiled CV (commit ${{ github.sha }})" ${{ env.FILES }}
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-          VERSION: 'compiled-pdf'
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          VERSION: "compiled-pdf"
           FILES: cv.pdf
         if: github.ref == 'refs/heads/master'
-
