@@ -11,6 +11,8 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    git-hooks.url = "github:cachix/git-hooks.nix";
+
     # Example of downloading icons from a non-flake source
     # font-awesome = {
     #   url = "github:FortAwesome/Font-Awesome";
@@ -19,6 +21,7 @@
   };
 
   outputs = inputs @ {
+    self,
     nixpkgs,
     typix,
     flake-utils,
@@ -91,6 +94,14 @@
     in {
       checks = {
         inherit build-drv build-script watch-script;
+
+        pre-commit-check = inputs.git-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            alejandra.enable = true;
+            typstyle.enable = true;
+          };
+        };
       };
 
       packages.default = build-drv;
@@ -106,6 +117,7 @@
       };
 
       devShells.default = typixLib.devShell {
+        inherit (self.checks.${system}.pre-commit-check) shellHook enabledPackages;
         inherit (commonArgs) fontPaths virtualPaths;
         packages = [
           # WARNING: Don't run `typst-build` directly, instead use `nix run .#build`
