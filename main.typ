@@ -1,5 +1,20 @@
 #import "@preview/modern-cv:0.9.0": *
 
+#let TeX = {
+  set text(font: "New Computer Modern")
+  let t = "T"
+  let e = text(baseline: 0.22em, "E")
+  let x = "X"
+  box(t + h(-0.14em) + e + h(-0.14em) + x)
+}
+
+#let LaTeX = {
+  set text(font: "New Computer Modern")
+  let l = "L"
+  let a = text(baseline: -0.35em, size: 0.66em, "A")
+  box(l + h(-0.32em) + a + h(-0.13em) + TeX)
+}
+
 #show: resume.with(
   author: (
     firstname: "Tomás",
@@ -145,19 +160,23 @@
 
 #resume-entry(
   title: "Federate Athlete",
-  date: "September 2018 - Current",
-  description: "Runner with participation in National level competitions",
+  // date: "September 2018 - Current",
+  // description: "Runner with participation in National level competitions",
 )
 
-#resume-entry(
-  title: "Computer Hardware and Self-Hosting",
-  date: "August 2020 - Current",
-  description: "Built my own PC and self-hosted infra including email server and personal website",
-)
+#resume-item[
+  Runner with participation in National level competitions
+]
 
-#resume-entry(
-  title: "Technologies",
-  date: "Current",
-  description: "C, Git, Java, Linux, Nix, Rust, Typst, Latex",
-)
+#resume-entry(title: "Computer Hardware and Self-Hosting")
+
+#resume-item[
+  Built my own PC and self-hosted infrastructure including email server and personal website
+]
+
+#resume-entry(title: "Technologies")
+
+#resume-item[
+  C, Java, Rust, Git, Nix, Linux, Typst, #LaTeX
+]
 
