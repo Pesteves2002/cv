@@ -20,7 +20,7 @@
     firstname: "Tomás",
     lastname: "Esteves",
     email: "tomas@tomase.pt",
-    homepage: "https://tomase.pt",
+    homepage: "www.tomase.pt",
     // phone: "",
     github: "Pesteves2002",
     linkedin: "tomase-pt",
@@ -31,7 +31,9 @@
     // address: "111 Example St. Example City, EX 11111",
     positions: (),
   ),
-  colored-headers: true,
+  accent-color: black,
+  use-smallcaps: true,
+  colored-headers: false,
   date: datetime.today().display(),
   description: "Curriculum Vitae of Tomás",
   language: "en",
@@ -43,29 +45,48 @@
 = Experience
 
 #resume-entry(
-  title: "Full Stack Developer & Systems Administrator",
-  location: "Instituto Superior Técnico, Lisbon, Portugal",
+  title: "Inesc-ID",
+  location: "Lisbon, Portugal",
+  date: "August 2024 - October 2025",
+  description: "Research Intern",
+  title-link: "www.inesc-id.pt",
+)
+
+#resume-item[
+  - Conducted thesis research on distributed computation of large-scale matrix functions.
+  - Designed a novel algorithm with patent potential, improving efficiency and scalability.
+  - Implemented parallel execution using OpenMP, achieving near-linear performance scaling.
+  - Developed a distributed version using OpenMPI, enabling experimentation on significantly larger matrices.
+  - Executed large-scale benchmarks on the Deucalion and MareNostrum supercomputers using SLURM workload management.
+  - Utilized the HDF5 library for high-performance data storage and retrieval.
+]
+
+#resume-entry(
+  title: "Instituto Superior Técnico - DEI",
+  location: "Lisbon, Portugal",
   date: "August 2022 - July 2024",
-  description: "Intern at Departamento de Engenharia Informática (DEI)",
+  description: "Full Stack Developer & Systems Administrator",
   title-link: "www.dei.tecnico.ulisboa.pt",
 )
 
 #resume-item[
-  Develop applications and troubleshoot for the Computer Science Department of the
-  University.
+  - Upgraded the backend stack by moving Java from 11 to 17 and Spring Boot from 2.2.4 to 2.7.5.
 
-  Technologies used:
-  - (backend) Java, Spring Boot, MariaDB/Postgres
-  - (frontend) Vue, Typescript
+  - Modernized the frontend by migrating from Vue 2 to Vue 3 with Typescript.
 
-  Work History:
-  - Upgrade backend and frontend tech stack
-  - Major refactor in User Data and Logic
-  - Implement cron jobs to automate processes
-  - Implement Quality of Life features to end users
-  - Use of APIs in order to import school data
-  - Optimize overall performance of the application
-  - Troubleshoot diverse issues
+  - Implemented reliable Flyway migration pipelines for safe and consistent database changes.
+
+  - Refactored core user data models and business logic to improve maintainability and scalability.
+
+  - Integrated external APIs to automate the import and synchronization of school data.
+
+  - Designed and deployed automated cron-based workflows to streamline departmental operations.
+
+  - Implemented secure refresh-token mechanisms to enhance authentication stability.
+
+  - Optimized application performance, achieving up to 100× faster request processing.
+
+  - Supported office staff by resolving issues related to printers, Windows systems, and email tools.
 ]
 
 // = Skills
@@ -177,6 +198,6 @@
 #resume-entry(title: "Technologies")
 
 #resume-item[
-  C, Java, Rust, Git, Nix, Linux, Typst, #LaTeX
+  C, Java, Rust, PostgreSQL/MariaDB, Git, Nix, Linux, #LaTeX, Typst
 ]
 
