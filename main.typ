@@ -1,20 +1,5 @@
 #import "@preview/modern-cv:0.9.0": *
 
-#let TeX = {
-  set text(font: "New Computer Modern")
-  let t = "T"
-  let e = text(baseline: 0.22em, "E")
-  let x = "X"
-  box(t + h(-0.14em) + e + h(-0.14em) + x)
-}
-
-#let LaTeX = {
-  set text(font: "New Computer Modern")
-  let l = "L"
-  let a = text(baseline: -0.35em, size: 0.66em, "A")
-  box(l + h(-0.32em) + a + h(-0.13em) + TeX)
-}
-
 #show: resume.with(
   author: (
     firstname: "Tomás",
@@ -54,10 +39,9 @@
 
 #resume-item[
   - Conducted thesis research on distributed computation of large-scale matrix functions.
-  - Designed a novel algorithm with patent potential, improving efficiency and scalability.
-  - Implemented parallel execution using OpenMP, achieving near-linear performance scaling.
+  - Engineered a novel algorithm with patent potential and parallelized it with OpenMP for 100% parallel efficiency.
   - Developed a distributed version using OpenMPI, enabling experimentation on significantly larger matrices.
-  - Executed large-scale benchmarks on the Deucalion and MareNostrum supercomputers using SLURM workload management.
+  - Executed large-scale benchmarks on the Deucalion and MareNostrum supercomputers using SLURM workload management, leveraging up to 8,000 cores across 100 nodes.
   - Utilized the HDF5 library for high-performance data storage and retrieval.
 ]
 
@@ -66,7 +50,7 @@
   location: "Lisbon, Portugal",
   date: "August 2022 - July 2024",
   description: "Full Stack Developer & Systems Administrator",
-  title-link: "www.dei.tecnico.ulisboa.pt",
+  title-link: "https://dei.tecnico.ulisboa.pt",
 )
 
 #resume-item[
@@ -76,15 +60,13 @@
 
   - Implemented reliable Flyway migration pipelines for safe and consistent database changes.
 
-  - Refactored core user data models and business logic to improve maintainability and scalability.
+  - Refactored core user data models and business logic to enhance maintainability and scalability, achieving up to 100× faster request processing.
 
   - Integrated external APIs to automate the import and synchronization of school data.
 
   - Designed and deployed automated cron-based workflows to streamline departmental operations.
 
   - Implemented secure refresh-token mechanisms to enhance authentication stability.
-
-  - Optimized application performance, achieving up to 100× faster request processing.
 
   - Supported office staff by resolving issues related to printers, Windows systems, and email tools.
 ]
@@ -195,9 +177,25 @@
   Built my own PC and self-hosted infrastructure including email server and personal website
 ]
 
+#let TeX = {
+  set text(font: "New Computer Modern")
+  let t = "T"
+  let e = text(baseline: 0.22em, "E")
+  let x = "X"
+  box(t + h(-0.14em) + e + h(-0.14em) + x)
+}
+
+#let LaTeX = {
+  set text(font: "New Computer Modern")
+  let l = "L"
+  let a = text(baseline: -0.35em, size: 0.66em, "A")
+  box(l + h(-0.32em) + a + h(-0.13em) + TeX)
+}
+
 #resume-entry(title: "Technologies")
 
 #resume-item[
   C, Java, Rust, PostgreSQL/MariaDB, Git, Nix, Linux, #LaTeX, Typst
 ]
+
 
