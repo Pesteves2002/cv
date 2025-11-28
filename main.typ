@@ -98,7 +98,7 @@
   title: "Instituto Superior Técnico",
   location: "Lisbon, Portugal",
   date: "September 2023 - October 2025",
-  description: "Master's Degree in Computer Science and Engineering",
+  description: "Master's Degree in Computer Science and Engineering (17/20)",
   title-link: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a",
 )
 
@@ -118,7 +118,7 @@
   title: "Instituto Superior Técnico",
   location: "Lisbon, Portugal",
   date: "September 2020 - June 2023",
-  description: "Bachelor's Degree in Computer Science and Engineering",
+  description: "Bachelor's Degree in Computer Science and Engineering (17/20)",
   title-link: "https://fenix.tecnico.ulisboa.pt/cursos/leic-a",
 )
 
