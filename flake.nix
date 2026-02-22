@@ -29,7 +29,6 @@
   }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-      inherit (pkgs) lib;
 
       typixLib = typix.lib.${system};
 
@@ -58,20 +57,14 @@
 
       unstable_typstPackages = [
         {
-          name = "modern-cv";
-          version = "0.9.0";
-          hash = "sha256-zCv2UABp3lBBbYthrSXD4OXWaiIjMdwRPQbq5a8AlUk=";
+          name = "basic-resume";
+          version = "0.2.9";
+          hash = "sha256-PYGzfttkA+hgeF4NRzAiGujI39PqbCAU9Ub+U+/vCb0=";
         }
         {
-          name = "fontawesome";
-          version = "0.6.0";
-          hash = "sha256-dgb+YAYLEKgMMEWa8yelMvRdEoesPj5HI+70w3mCUcQ=";
-        }
-
-        {
-          name = "linguify";
-          version = "0.4.2";
-          hash = "sha256-kuoK0r29kvc0rvDIQWELp/fZUm3Bzxc5W8M/YMU3lvg=";
+          name = "scienceicons";
+          version = "0.1.0";
+          hash = "sha256-gDj/8uaTypGJ8P5w88+uLY6zCBHySTXL/e1S+1iq/mY=";
         }
       ];
 
