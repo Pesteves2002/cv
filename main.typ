@@ -17,28 +17,92 @@
     positions: (),
   ),
   accent-color: black,
-  use-smallcaps: true,
+  font: "Source Sans Pro",
+  use-smallcaps: false,
   colored-headers: false,
   date: datetime.today().display(),
-  description: "Curriculum Vitae of Tomás",
+  description: "Curriculum Vitae of Tomás Esteves",
   language: "en",
   // paper-size: "a4",
   profile-picture: none,
   show-footer: false,
 )
 
+#show heading.where(level: 1): it => block(
+  sticky: true,
+  above: 0.85em,
+  below: 0.5em,
+)[
+  #set text(size: 12pt, weight: "regular")
+  #set align(left)
+  #set block(above: 0em, below: 0.25em)
+  #let color = color-darkgray
+
+  #block[
+    #text[#upper[#text(color)[#it.body]]]
+  ]
+
+  #block[
+    #line(length: 100%, stroke: 0.5pt)
+  ]
+]
+
+#let resume-entry(
+  title: none,
+  location: "",
+  date: "",
+  description: "",
+  title-link: none,
+  accent-color: default-accent-color,
+  location-color: default-location-color,
+) = {
+  let title-content
+  if type(title-link) == str {
+    title-content = link(title-link)[#title]
+  } else {
+    title-content = title
+  }
+
+  block(above: 0.45em, below: 0.65em, sticky: true)[
+    #pad[
+      #justified-header(title-content, location)
+      #if description != "" or date != "" [
+        #secondary-justified-header(emph(description), date)
+      ]
+    ]
+  ]
+}
+
+#let resume-item(body) = {
+  set text(
+    size: 10pt,
+    style: "normal",
+    weight: "regular",
+    fill: color-darknight,
+  )
+  set block(above: 0.75em, below: 0.85em)
+  set par(leading: 0.65em)
+
+  pad(
+    left: 1em,
+    block()[
+      #body
+    ],
+  )
+}
+
 = Experience
 
 #resume-entry(
-  title: "Inesc-ID",
+  title: "INESC-ID",
   location: "Lisbon, Portugal",
-  date: "August 2024 - October 2025",
-  description: "Research Intern",
+  date: "Aug 2024 - Oct 2025",
+  description: "HPC Research Intern",
   title-link: "www.inesc-id.pt",
 )
 
 #resume-item[
-  - Conducted thesis research on distributed computation of large-scale matrix functions.
+  - Conducted thesis research on distributed computation of large-scale matrix functions in C++.
   - Engineered a novel algorithm with patent potential and parallelized it with OpenMP for 100% parallel efficiency.
   - Developed a distributed version using OpenMPI, enabling experimentation on significantly larger matrices.
   - Executed large-scale benchmarks on the Deucalion and MareNostrum supercomputers using SLURM workload management, leveraging up to 8,000 cores across 100 nodes.
@@ -48,7 +112,7 @@
 #resume-entry(
   title: "Instituto Superior Técnico - DEI",
   location: "Lisbon, Portugal",
-  date: "August 2022 - July 2024",
+  date: "Aug 2022 - Jul 2024",
   description: "Full Stack Developer & Systems Administrator",
   title-link: "https://dei.tecnico.ulisboa.pt",
 )
@@ -71,45 +135,24 @@
   - Supported office staff by resolving issues related to printers, Windows systems, and email tools.
 ]
 
-// = Skills
-
-// #resume-skill-item(
-//   "Languages",
-//   (
-//     strong("C"),
-//     strong("Java"),
-//     "SQL",
-//     "Spring Boot",
-//   ),
-// )
-// #resume-skill-item("Spoken Languages", (strong("Portuguese"), "English"))
-// #resume-skill-item(
-//   "Operating Systems",
-//   (
-//     strong("Linux"),
-//     "Windows",
-//   ),
-// )
-// #resume-skill-item("Tools", (strong("git"), "vim", "Latex", "Typst"))
-
 = Education
 
 #resume-entry(
   title: "Instituto Superior Técnico",
   location: "Lisbon, Portugal",
-  date: "September 2023 - October 2025",
-  description: "Master's Degree in Computer Science and Engineering (17/20)",
+  date: "Sep 2023 - Oct 2025",
+  description: "Master's Degree in Computer Science and Engineering",
   title-link: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a",
 )
 
 #resume-item[
-  Specialization in Distributed Systems and Cybersecurity.
+  - Specialization in Distributed Systems and Cybersecurity.
 ]
 
 #resume-entry(
   title: "Kungliga Tekniska Högskolan",
   location: "Stockholm, Sweeden",
-  date: "August 2024 - December 2024",
+  date: "Aug 2024 - Dec 2024",
   description: "Erasmus Programme",
   title-link: "https://www.kth.se/en/studies/exchange/exchange-studies-at-kth",
 )
@@ -117,8 +160,8 @@
 #resume-entry(
   title: "Instituto Superior Técnico",
   location: "Lisbon, Portugal",
-  date: "September 2020 - June 2023",
-  description: "Bachelor's Degree in Computer Science and Engineering (17/20)",
+  date: "Sep 2020 - Jun 2023",
+  description: "Bachelor's Degree in Computer Science and Engineering",
   title-link: "https://fenix.tecnico.ulisboa.pt/cursos/leic-a",
 )
 
@@ -149,33 +192,33 @@
 #resume-entry(
   title: "Winner of Novabase/Celfocus Prize",
   location: "Lisbon, Portugal",
-  date: "July 2023",
+  date: "Jul 2023",
   description: "Best project at Software Engineering Course",
   title-link: "https://tecnico.ulisboa.pt/pt/noticias/campus-e-comunidade/celfocus-distingue-estudantes-do-tecnico-em-engenharia-de-software/",
 )
 
 #resume-item[
-  - Developed features for QuizzesTutor, a full-stack web app, in an Agile workflow with sprints and Test-Driven Development (TDD).
+  - Developed features for a full-stack web app, in an Agile workflow with sprints and Test-Driven Development (TDD).
   - Worked across the stack with Spring Boot, PostgreSQL, Vue, and GitLab, supporting CI/CD pipelines.
 ]
 
 = Projects and Interests
 
 #resume-entry(
-  title: "Federate Athlete",
-  // date: "September 2018 - Current",
-  // description: "Runner with participation in National level competitions",
+  title: "Self-Hosted Infrastructure",
+  date: "2020 - Present",
+  description: "Set up and maintain my self-hosted infrastructure, including mail server, personal website, and Nextcloud",
 )
 
 #resume-item[
-  Runner with participation in National level competitions
+  - Utilized technologies such as NixOS, Nginx, Prometheus, Grafana, Loki, and Tailscale
 ]
 
-#resume-entry(title: "Computer Hardware and Self-Hosting")
-
-#resume-item[
-  Built my own PC and self-hosted infrastructure including email server and personal website
-]
+#resume-entry(
+  title: "Federate Athlete",
+  date: "2018 - Current",
+  description: "Runner with participation in National level competitions",
+)
 
 #let TeX = {
   set text(font: "New Computer Modern")
@@ -192,10 +235,10 @@
   box(l + h(-0.32em) + a + h(-0.13em) + TeX)
 }
 
-#resume-entry(title: "Technologies")
+= Languages and Technologies
 
 #resume-item[
-  C, Java, Rust, PostgreSQL/MariaDB, Git, Nix, Linux, #LaTeX, Typst
+  Bash, C/C++, Docker, Git, Java, #LaTeX, Linux, Nix, PostgreSQL/MariaDB, Python, Rust, Spring Boot, Typst
 ]
 
 
