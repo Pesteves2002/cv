@@ -42,7 +42,6 @@
           # "${pkgs.roboto}/share/fonts/truetype"
           roboto
           source-sans-pro
-          source-sans
           font-awesome
           typstPackages.fontawesome
         ];
