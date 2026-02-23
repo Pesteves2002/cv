@@ -21,7 +21,8 @@
   personal-site: personal-site,
   accent-color: black,
   font: "Source Sans Pro",
-  paper: "a4",
+  font-size: 10.0pt,
+  // paper: "a4",
   author-position: center,
   personal-info-position: center,
 )
@@ -31,27 +32,27 @@
 #work(
   company: "Inesc-ID",
   location: "Lisbon, Portugal",
-  dates: dates-helper(start-date: "August 2024", end-date: "October 2025"),
-  title: "Research Intern",
+  dates: dates-helper(start-date: "Aug 2024", end-date: "Oct 2025"),
+  title: "HPC Research Intern",
   // title-link: "www.inesc-id.pt",
 )
-- Conducted thesis research on distributed computation of large-scale matrix functions.
+- Conducted thesis research on distributed computation of large-scale matrix functions in C++.
 - Engineered a novel algorithm with patent potential and parallelized it with OpenMP for 100% parallel efficiency.
 - Developed a distributed version using OpenMPI, enabling experimentation on significantly larger matrices.
 - Executed large-scale benchmarks on the Deucalion and MareNostrum supercomputers using SLURM workload management, leveraging up to 8,000 cores across 100 nodes.
 - Utilized the HDF5 library for high-performance data storage and retrieval.
 
 #work(
-  company: "Instituto Superior Técnico - DEI",
+  company: "Instituto Superior Técnico - Computer Science Department",
   location: "Lisbon, Portugal",
-  dates: dates-helper(start-date: "Aug 2022", end-date: "Jul 2024"),
+  dates: dates-helper(start-date: "Aug 2022", end-date: "July 2024"),
   title: "Full Stack Developer & Systems Administrator",
   // title-link: "https://dei.tecnico.ulisboa.pt",
 )
 - Upgraded the backend stack by moving Java from 11 to 17 and Spring Boot from 2.2.4 to 2.7.5.
 - Modernized the frontend by migrating from Vue 2 to Vue 3 with Typescript.
 - Implemented reliable Flyway migration pipelines for safe and consistent database changes.
-- Refactored core user data models and business logic to enhance maintainability and scalability, achieving up to 100× faster request processing.
+- Refactored data models and business logic, improving maintainability and boosting request processing speed by up to 100×.
 - Integrated external APIs to automate the import and synchronization of school data.
 - Designed and deployed automated cron-based workflows to streamline departmental operations.
 - Implemented secure refresh-token mechanisms to enhance authentication stability.
@@ -70,8 +71,8 @@
 - Specialization in Distributed Systems and Cybersecurity.
 
 #edu(
-  institution: "Kungliga Tekniska Högskolan",
-  location: "Stockholm, Sweeden",
+  institution: "KTH Royal Institute of Technology",
+  location: "Stockholm, Sweden",
   dates: dates-helper(start-date: "Aug 2024", end-date: "Dec 2024"),
   degree: "Erasmus Programme",
   consistent: true,
@@ -81,7 +82,7 @@
 #edu(
   institution: "Instituto Superior Técnico",
   location: "Lisbon, Portugal",
-  dates: dates-helper(start-date: "Sep 2020", end-date: "Jun  2023"),
+  dates: dates-helper(start-date: "Sep 2020", end-date: "Jun 2023"),
   degree: "Bachelor's Degree in Computer Science and Engineering",
   consistent: true,
   // title-link: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a",
@@ -106,7 +107,7 @@
 
 #project(
   name: "Winner of Novabase/Celfocus Prize",
-  dates: "Jul 2023",
+  dates: "July 2023",
 )
 - Best project at Software Engineering Course
   - Developed features for QuizzesTutor, a full-stack web app, in an Agile workflow with sprints and Test-Driven Development (TDD).
@@ -128,7 +129,7 @@
 
 // #resume-entry(
 //   title: "Federate Athlete",
-//   // date: "September 2018 - Current",
+//   // date: "September 2018 - Present",
 //   // description: "Runner with participation in National level competitions",
 // )
 
@@ -142,22 +143,7 @@
 //   Built my own PC and self-hosted infrastructure including email server and personal website
 // ]
 
-#let TeX = {
-  set text(font: "New Computer Modern")
-  let t = "T"
-  let e = text(baseline: 0.22em, "E")
-  let x = "X"
-  box(t + h(-0.14em) + e + h(-0.14em) + x)
-}
-
-#let LaTeX = {
-  set text(font: "New Computer Modern")
-  let l = "L"
-  let a = text(baseline: -0.35em, size: 0.66em, "A")
-  box(l + h(-0.32em) + a + h(-0.13em) + TeX)
-}
-
 == Languages and Technologies
 
-Bash, C/C++, Docker, Git, Java, #LaTeX, Linux, Nix, PostgreSQL/MariaDB, Python, Rust, Spring Boot, Typst
+Bash, C, C++, Docker, Java (Spring Boot), Linux, Nix, Python, Rust
 
