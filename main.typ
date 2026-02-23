@@ -82,7 +82,7 @@
 #edu(
   institution: "Instituto Superior Técnico",
   location: "Lisbon, Portugal",
-  dates: dates-helper(start-date: "Sep 2020", end-date: "Jun 2023"),
+  dates: dates-helper(start-date: "Sep 2020", end-date: "June 2023"),
   degree: "Bachelor's Degree in Computer Science and Engineering",
   consistent: true,
   // title-link: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a",
