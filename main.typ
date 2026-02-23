@@ -150,8 +150,8 @@
 ]
 
 #resume-entry(
-  title: "Kungliga Tekniska Högskolan",
-  location: "Stockholm, Sweeden",
+  title: "KTH Royal Institute of Technology",
+  location: "Stockholm, Sweden",
   date: "Aug 2024 - Dec 2024",
   description: "Erasmus Programme",
   title-link: "https://www.kth.se/en/studies/exchange/exchange-studies-at-kth",
